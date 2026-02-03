@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Facebook Login</title>
+    <style>
+        /* Общие стили страницы */
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f0f2f5;
+            height: 100vh;
+
+            /* Flex для центрирования */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Контейнер формы */
+        .login-container {
+            background-color: white;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            width: 350px;
+            text-align: center;
+        }
+
+        /* Логотип Facebook */
+        .logo {
+            font-size: 32px;
+            color: #1877f2;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        /* Inputs */
+        input[type="text"], input[type="password"] {
+            width: 100%;
+            padding: 12px;
+            margin: 6px 0;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-size: 16px;
+        }
+
+        /* Login button */
+        button {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            background-color: #1877f2;
+            color: white;
+            font-size: 16px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #165fcc;
+        }
+
+        /* Links */
+        .links {
+            margin-top: 10px;
+        }
+
+        .links a {
+            display: block;
+            color: #1877f2;
+            text-decoration: none;
+            margin: 4px 0;
+            font-size: 14px;
+        }
+
+        .links a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="login-container">
+        <div class="logo">Facebook</div>
+
+        <form>
+            <input type="text" placeholder="Email or phone number" required>
+            <input type="password" placeholder="Password" required>
+            <button type="submit">Log In</button>
+        </form>
+
+        <div class="links">
+            <a href="#">Forgot password?</a>
+            <a href="#">Create new account</a>
+        </div>
+    </div>
+
+</body>
+</html>
