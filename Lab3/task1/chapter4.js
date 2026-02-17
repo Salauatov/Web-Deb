@@ -1,0 +1,11 @@
+"use strict";
+let number = 42;
+let string = "Hello";
+let isActive = true;
+let nothing = null;
+let notDefined;
+console.log(typeof number);
+console.log(typeof string);
+console.log(typeof isActive);
+console.log(typeof nothing);
+console.log(typeof notDefined);
