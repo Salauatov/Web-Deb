@@ -1,0 +1,23 @@
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+}
+
+.navbar a {
+  text-decoration: none;
+  color: black;
+}
+
+.navbar a:hover {
+  color: #6a6a6a;
+}
+
+.nav-link {
+}
+
+

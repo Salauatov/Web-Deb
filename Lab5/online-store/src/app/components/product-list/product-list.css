@@ -1,0 +1,42 @@
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  grid-auto-rows: 1fr;
+
+  gap: 80px;
+  padding: 40px;
+}
+
+.grid-categories {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, auto));
+  gap: 10px;
+  justify-content: center;
+  width: 100%;
+  margin: 0 auto;
+
+}
+
+.center {
+
+}
+.category-btn {
+  border: 1px solid #958b8b;
+  background-color: #c6c6c6;
+  color: #000000;
+  font-family: "Inter Tight", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  padding: 30px;
+  overflow: auto;
+  height: 30px;
+  border-radius: 34px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.selected {
+  background-color: #ecac1e;
+  transform: translateY(-5px);
+}

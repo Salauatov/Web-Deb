@@ -1,0 +1,23 @@
+@if (isOpen()) {
+  <div class="overlay" (click)="onBackdropClick()">
+    <div class="modal-content" (click)="$event.stopPropagation()">
+
+      <button class="close" (click)="onClose()">✕</button>
+
+      <div class="modal-body">
+        <div class="modal-image">
+          <img [src]="product().image" [alt]="product.name" class="product-image">
+        </div>
+
+        <div class="modal-details">
+          {{product().name}} <br> <br>
+          {{product().description}} <br> <br>
+          {{product().price}} тенге <br>
+          <a [href]="product().link" target="_blank"> KASPI PAGE </a> <br>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+}

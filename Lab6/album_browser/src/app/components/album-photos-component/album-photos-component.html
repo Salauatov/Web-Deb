@@ -1,0 +1,14 @@
+<div *ngIf="loading(); else photosList">
+  Loading photos...
+</div>
+
+<ng-template #photosList>
+  <div class="photo-grid">
+    <div *ngFor="let photo of albumPhotos()">
+      <img [src]="photo.thumbnailUrl" [alt]="photo.title">
+      <p>{{ photo.title }}</p>
+    </div>
+  </div>
+
+  <button routerLink="/albums/{{albumId}}">Back</button>
+</ng-template>

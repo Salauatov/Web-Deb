@@ -1,0 +1,33 @@
+<div class="center">
+  <div class="grid-categories">
+    @for (category of categories; track category.id) {
+      @if (selectedCategoryId() == category.id) {
+        <button class="category-btn selected" (click)="setCategory(category.id)">
+          {{ category.name }}
+        </button>
+      } @else {
+      <button class="category-btn" (click)="setCategory(category.id)">
+        {{ category.name }}
+      </button>
+      }
+    }
+  </div>
+</div>
+
+<div class="grid-container">
+  @for (product of filteredProducts(); track product.id) {
+    <app-product-card
+      [product]="product"
+      (quickView)="openQuickView($event)"
+      (delete)="deleteCard($event)">
+    </app-product-card>
+  }
+</div>
+
+@if (selectedProduct()) {
+  <app-modal
+    [product]="selectedProduct()!"
+    [isOpen]="isModalOpen()"
+    (closeModal)="closeQuickView()">
+  </app-modal>
+}

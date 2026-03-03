@@ -1,0 +1,21 @@
+<div class="card">
+  <div class="image-wrapper">
+    <img [src]="product.image" [alt]="product.name" class="product-image">
+  </div>
+
+  <h3>{{ product.name }}</h3>
+  <p class="desc">{{ product.description }}</p>
+  <div class="rating">⭐ {{ product.rating }}</div>
+  <div class="price">{{ product.price | number }} ₸</div>
+  <button class="likes-count" (click)="newLike()"> ❤️ {{this.likes}}</button>
+
+  <div class="actions">
+    <a [href]="product.link" target="_blank" class="buy-btn">View on Kaspi</a>
+    <button (click)="onDelete()"> DELETE </button>
+    <div class="share-btns">
+      <button (click)="quickView.emit(product)">Quick View</button>
+      <button (click)="shareToWhatsApp()" class="share-btn wa">WA</button>
+      <button (click)="shareToTelegram()" class="share-btn tg">TG</button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,17 @@
+@if(album()) {
+  <div class="album-detail">
+    User id: {{ album()?.userId }} <br>
+    Album id: {{ album()?.id }} <br>
+    Title: {{ album()?.title }}
+    <input
+      #newTitle
+      [value]="album()?.title"
+     >
+
+    <button class="save" (click)="updateAlbum(newTitle.value)">SAVE</button>
+    <button class="view-photos" [routerLink]="['/albums', album()?.id, 'photos']">VIEW PHOTOS</button>
+    <button class="back" routerLink="/albums">BACK</button>
+  </div>
+} @else {
+  <div class="album-detail">Loading data...</div>
+}

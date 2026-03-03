@@ -1,0 +1,32 @@
+.album-photos {
+  margin: 60px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  grid-auto-rows: 1fr;
+  gap: 15px;
+}
+
+.photo {
+  border: 1px solid black;
+  aspect-ratio: 1/1;
+  position: relative;
+  width: 100%;
+  border-radius: 6px;
+  background-color: #d19999;
+}
+
+.back {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 50px auto;
+  font-size: 35px;
+  border: 1px solid black;
+  width: 95px;
+  border-radius: 10px;
+  background-color: #a38c8c;
+}
+
+.back:hover {
+  cursor: pointer;
+}
