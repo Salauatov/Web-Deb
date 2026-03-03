@@ -1,0 +1,34 @@
+<div>
+  <h1 class="text-3xl font-bold text-gray-800 mb-8">Albums</h1>
+
+  <div *ngIf="loading" class="flex items-center gap-3 text-gray-400 py-16 justify-center">
+    <svg class="animate-spin h-5 w-5 text-indigo-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+      <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"/>
+      <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8z"/>
+    </svg>
+    <span class="text-sm">Loading albums...</span>
+  </div>
+
+  <div *ngIf="!loading && albums.length === 0" class="text-gray-400 text-center py-16 text-sm">
+    No albums found.
+  </div>
+
+  <ul *ngIf="!loading && albums.length > 0" class="space-y-2">
+    <li
+      *ngFor="let album of albums"
+      (click)="goToDetail(album.id)"
+      class="flex items-center justify-between bg-white border border-gray-200 rounded-lg px-5 py-4 cursor-pointer hover:border-indigo-300 hover:shadow-sm transition-all group"
+    >
+      <div class="flex items-center gap-4 min-w-0">
+        <span class="text-xs font-mono text-gray-400 w-8 shrink-0">#{{ album.id }}</span>
+        <span class="text-sm text-gray-700 group-hover:text-indigo-600 truncate transition-colors">{{ album.title }}</span>
+      </div>
+      <button
+        (click)="delete($event, album.id)"
+        class="ml-4 shrink-0 text-xs text-red-500 hover:text-white hover:bg-red-500 border border-red-200 hover:border-red-500 px-3 py-1 rounded transition-all"
+      >
+        Delete
+      </button>
+    </li>
+  </ul>
+</div>

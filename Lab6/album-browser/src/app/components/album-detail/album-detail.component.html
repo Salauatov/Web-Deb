@@ -1,0 +1,52 @@
+<div class="max-w-xl">
+  <button (click)="back()" class="text-sm text-indigo-600 hover:underline mb-6 inline-flex items-center gap-1">
+    &larr; Back to Albums
+  </button>
+
+  <div *ngIf="loading" class="flex items-center gap-3 text-gray-400 py-16 justify-center">
+    <svg class="animate-spin h-5 w-5 text-indigo-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+      <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"/>
+      <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8z"/>
+    </svg>
+    <span class="text-sm">Loading album...</span>
+  </div>
+
+  <div *ngIf="!loading && album" class="bg-white border border-gray-200 rounded-xl p-8 space-y-6">
+    <div>
+      <h1 class="text-2xl font-bold text-gray-800">Album Detail</h1>
+      <div class="mt-4 space-y-2 text-sm text-gray-600">
+        <div><span class="font-medium text-gray-700">ID:</span> {{ album!.id }}</div>
+        <div><span class="font-medium text-gray-700">User ID:</span> {{ album!.userId }}</div>
+      </div>
+    </div>
+
+    <div class="space-y-2">
+      <label class="block text-sm font-medium text-gray-700">Title</label>
+      <input
+        [(ngModel)]="editTitle"
+        class="w-full border border-gray-300 rounded-lg px-4 py-2 text-sm text-gray-800 focus:outline-none focus:ring-2 focus:ring-indigo-400"
+      />
+    </div>
+
+    <div class="flex items-center gap-3 flex-wrap">
+      <button
+        (click)="save()"
+        [disabled]="saving"
+        class="bg-indigo-600 hover:bg-indigo-700 disabled:opacity-60 text-white text-sm px-5 py-2 rounded-lg transition-colors"
+      >
+        {{ saving ? 'Saving...' : 'Save' }}
+      </button>
+      <span *ngIf="saved" class="text-green-600 text-sm font-medium">Saved successfully.</span>
+      <button
+        (click)="viewPhotos()"
+        class="ml-auto border border-gray-300 hover:border-indigo-400 hover:text-indigo-600 text-gray-600 text-sm px-5 py-2 rounded-lg transition-colors"
+      >
+        View Photos
+      </button>
+    </div>
+  </div>
+
+  <div *ngIf="!loading && !album" class="text-gray-400 text-center py-16 text-sm">
+    Album not found.
+  </div>
+</div>
